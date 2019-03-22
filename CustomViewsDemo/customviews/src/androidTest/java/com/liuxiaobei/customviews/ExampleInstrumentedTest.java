@@ -1,4 +1,4 @@
-package com.xiaobei.android.customviews;
+package com.liuxiaobei.customviews;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.xiaobei.android.customviews.test", appContext.getPackageName());
+        assertEquals("com.liuxiaobei.customviews.test", appContext.getPackageName());
     }
 }

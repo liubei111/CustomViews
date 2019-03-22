@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/custom_views"
+            android:textSize="20sp"
+            android:textColor="#333333"
+            android:textStyle="bold"/>
+    </RelativeLayout>
+    <!--自定义按钮-->
+    <com.liuxiaobei.customviews.CustomButton
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:text="@string/custom_button"
+        android:textSize="16sp"
+        app:cb_background_text_color="#333333"
+        app:cb_background_color="#22b9ec"
+        app:cb_radius="25dp"
+        app:cb_background_border="1dp"
+        app:cb_background_border_color="#8cc63f"/>
+</LinearLayout>

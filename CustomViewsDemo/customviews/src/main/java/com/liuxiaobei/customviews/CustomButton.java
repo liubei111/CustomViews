@@ -1,4 +1,4 @@
-package com.xiaobei.android.customviews;
+package com.liuxiaobei.customviews;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -13,7 +13,7 @@ import android.widget.Button;
 
 
 /**
- * @author xiaobei
+ *@author xiaobei 472887082@qq.com
  * 圆角
  * 边框
  * 背景色(narmal、press、false)
@@ -21,9 +21,9 @@ import android.widget.Button;
  */
 public class CustomButton extends Button {
 
-    public static int[]	mNormalState = new int[] {};
-    public static int[]	mPressState = new int[] { android.R.attr.state_pressed, android.R.attr.state_enabled };
-    public static int[]	mFalseState = new int[] { -android.R.attr.state_enabled };
+    public static int[] mNormalState = new int[]{};
+    public static int[] mPressState = new int[]{android.R.attr.state_pressed, android.R.attr.state_enabled};
+    public static int[] mFalseState = new int[]{-android.R.attr.state_enabled};
 
     private int customButtonRadius;//圆角
     private int customButtonBackgroundColor = 0xFFFFFFFF;//背景颜色
@@ -38,7 +38,7 @@ public class CustomButton extends Button {
     private int customButtonBorderColorFalse;//Enable为false时颜色(默认为设置边线按压时颜色)
 
     public CustomButton(Context context) {
-        this(context,null);
+        this(context, null);
     }
 
     public CustomButton(Context context, AttributeSet attrs) {
@@ -65,7 +65,7 @@ public class CustomButton extends Button {
         setView();
     }
 
-    public void setView(){
+    public void setView() {
         setGravity(Gravity.CENTER);
         //设置背景
         setCBBackground();
@@ -76,36 +76,36 @@ public class CustomButton extends Button {
     /**
      * 设置背景
      */
-    private void setCBBackground(){
+    private void setCBBackground() {
         StateListDrawable drawable = new StateListDrawable();
         //背景颜色
-        if(customButtonBackgroundColorPress == 0){
+        if (customButtonBackgroundColorPress == 0) {
             customButtonBackgroundColorPress = Color.argb(127,
                     Color.red(customButtonBackgroundColor),
                     Color.green(customButtonBackgroundColor),
                     Color.blue(customButtonBackgroundColor));
         }
-        if(customButtonBackgroundColorFalse == 0){
+        if (customButtonBackgroundColorFalse == 0) {
             customButtonBackgroundColorFalse = customButtonBackgroundColorPress;
         }
         //边线颜色
-        if(customButtonBorderColor == 0){
+        if (customButtonBorderColor == 0) {
             customButtonBorderColor = customButtonBackgroundColor;
         }
-        if(customButtonBorderColorPress == 0){
+        if (customButtonBorderColorPress == 0) {
             customButtonBorderColorPress = Color.argb(127,
                     Color.red(customButtonBorderColor),
                     Color.green(customButtonBorderColor),
                     Color.blue(customButtonBorderColor));
         }
-        if(customButtonBorderColorFalse == 0){
+        if (customButtonBorderColorFalse == 0) {
             customButtonBorderColorFalse = customButtonBorderColorPress;
         }
         //文字颜色
-        if(customButtonBackgroundTextColorPress == 0){
+        if (customButtonBackgroundTextColorPress == 0) {
             customButtonBackgroundTextColorPress = customButtonBackgroundTextColor;
         }
-        if(customButtonBackgroundTextColorFalse == 0){
+        if (customButtonBackgroundTextColorFalse == 0) {
             customButtonBackgroundTextColorFalse = customButtonBackgroundTextColorPress;
         }
 
@@ -113,19 +113,19 @@ public class CustomButton extends Button {
         GradientDrawable pressedDrawable = new GradientDrawable();
         pressedDrawable.setCornerRadius(customButtonRadius);
         pressedDrawable.setColor(customButtonBackgroundColorPress);
-        pressedDrawable.setStroke(customButtonBorder,customButtonBorderColorPress);
+        pressedDrawable.setStroke(customButtonBorder, customButtonBorderColorPress);
         drawable.addState(mPressState, pressedDrawable);
 
         GradientDrawable falseDrawable = new GradientDrawable();
         falseDrawable.setCornerRadius(customButtonRadius);
         falseDrawable.setColor(customButtonBackgroundColorFalse);
-        falseDrawable.setStroke(customButtonBorder,customButtonBorderColorFalse);
+        falseDrawable.setStroke(customButtonBorder, customButtonBorderColorFalse);
         drawable.addState(mFalseState, falseDrawable);
 
         GradientDrawable normalDrawable = new GradientDrawable();
         normalDrawable.setCornerRadius(customButtonRadius);
         normalDrawable.setColor(customButtonBackgroundColor);
-        normalDrawable.setStroke(customButtonBorder,customButtonBorderColor);
+        normalDrawable.setStroke(customButtonBorder, customButtonBorderColor);
         drawable.addState(mNormalState, normalDrawable);
 
         setBackground(drawable);
@@ -134,9 +134,9 @@ public class CustomButton extends Button {
     /**
      * 设置文字颜色
      */
-    private void setCBTextColor(){
-        ColorStateList colorStateList = new ColorStateList(new int[][] {mPressState,mFalseState,mNormalState},
-                new int[] {customButtonBackgroundTextColorPress,
+    private void setCBTextColor() {
+        ColorStateList colorStateList = new ColorStateList(new int[][]{mPressState, mFalseState, mNormalState},
+                new int[]{customButtonBackgroundTextColorPress,
                         customButtonBackgroundTextColorFalse,
                         customButtonBackgroundTextColor});
         setTextColor(colorStateList);
@@ -144,6 +144,7 @@ public class CustomButton extends Button {
 
     /**
      * 设置按钮背景颜色(normal)
+     *
      * @param customButtonBackgroundColor
      */
     public void setCustomButtonBackgroundColor(int customButtonBackgroundColor) {
@@ -153,6 +154,7 @@ public class CustomButton extends Button {
 
     /**
      * 设置按钮背景颜色(false)
+     *
      * @param customButtonBackgroundColorFalse
      */
     public void setCustomButtonBackgroundColorFalse(int customButtonBackgroundColorFalse) {
@@ -162,6 +164,7 @@ public class CustomButton extends Button {
 
     /**
      * 设置按钮背景颜色(press)
+     *
      * @param customButtonBackgroundColorPress
      */
     public void setCustomButtonBackgroundColorPress(int customButtonBackgroundColorPress) {
@@ -171,6 +174,7 @@ public class CustomButton extends Button {
 
     /**
      * 设置Text颜色(normal)
+     *
      * @param customButtonBackgroundTextColor
      */
     public void setCustomButtonBackgroundTextColor(int customButtonBackgroundTextColor) {
@@ -180,6 +184,7 @@ public class CustomButton extends Button {
 
     /**
      * 设置Text颜色(press)
+     *
      * @param customButtonBackgroundTextColorPress
      */
     public void setCustomButtonBackgroundTextColorPress(int customButtonBackgroundTextColorPress) {
@@ -189,6 +194,7 @@ public class CustomButton extends Button {
 
     /**
      * 设置Text颜色(false)
+     *
      * @param customButtonBackgroundTextColorFalse
      */
     public void setCustomButtonBackgroundTextColorFalse(int customButtonBackgroundTextColorFalse) {
@@ -198,6 +204,7 @@ public class CustomButton extends Button {
 
     /**
      * 设置按钮圆角
+     *
      * @param customButtonRadius
      */
     public void setCustomButtonRadius(int customButtonRadius) {
@@ -207,6 +214,7 @@ public class CustomButton extends Button {
 
     /**
      * 设置按钮边框
+     *
      * @param customButtonBorder
      */
     public void setCustomButtonBorder(int customButtonBorder) {
@@ -216,6 +224,7 @@ public class CustomButton extends Button {
 
     /**
      * 设置按钮边框颜色(normal)
+     *
      * @param customButtonBorderColor
      */
     public void setCustomButtonBorderColor(int customButtonBorderColor) {
@@ -225,6 +234,7 @@ public class CustomButton extends Button {
 
     /**
      * 设置按钮边框颜色(false)
+     *
      * @param customButtonBorderColorFalse
      */
     public void setCustomButtonBorderColorFalse(int customButtonBorderColorFalse) {
@@ -234,6 +244,7 @@ public class CustomButton extends Button {
 
     /**
      * 设置按钮边框颜色(press)
+     *
      * @param customButtonBorderColorPress
      */
     public void setCustomButtonBorderColorPress(int customButtonBorderColorPress) {

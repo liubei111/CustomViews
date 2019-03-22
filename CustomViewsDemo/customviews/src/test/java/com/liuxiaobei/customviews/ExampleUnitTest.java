@@ -1,4 +1,4 @@
-package com.xiaobei.android.customviews;
+package com.liuxiaobei.customviews;
 
 import org.junit.Test;
 

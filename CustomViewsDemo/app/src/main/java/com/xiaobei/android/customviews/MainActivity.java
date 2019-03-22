@@ -2,8 +2,9 @@ package com.xiaobei.android.customviews;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Toast;
 
-import com.liuxiaobei.customviews.CustomButton;
 
 public class MainActivity extends Activity {
 
@@ -11,6 +12,9 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.act_main);
-//        CustomButton
+    }
+
+    public void CBClick(View v){
+        Toast.makeText(this,getResources().getString(R.string.custom_button),Toast.LENGTH_SHORT).show();
     }
 }

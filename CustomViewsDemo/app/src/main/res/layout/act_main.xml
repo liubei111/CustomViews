@@ -32,4 +32,13 @@
         app:cb_radius="25dp"
         app:cb_background_border="1dp"
         app:cb_background_border_color="#8cc63f"/>
+    <!--自定义TextView-->
+    <com.liuxiaobei.customviews.CustomTextView
+        android:id="@+id/ctv_text"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="0123456789"
+        android:textSize="20sp"/>
 </LinearLayout>

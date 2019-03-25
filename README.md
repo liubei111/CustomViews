@@ -18,6 +18,6 @@ allprojects {
 Step 2. Add the dependency
 (在app下的build中添加内容，如下所示)
 dependencies {
-	implementation 'com.github.liubei111:CustomViews:1.0.6'
+	implementation 'com.github.liubei111:CustomViews:1.0.7'
 }
 

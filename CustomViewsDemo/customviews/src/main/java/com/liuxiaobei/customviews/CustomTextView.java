@@ -276,6 +276,24 @@ public class CustomTextView extends TextView {
     }
 
     /**
+     * 设置文字
+     * @param text
+     */
+    public void setCtText(CharSequence text){
+        setText(text);
+        spannableString = null;
+    }
+
+    /**
+     * 设置文字
+     * @param textID
+     */
+    public void setCtText(int textID){
+        setText(textID);
+        spannableString = null;
+    }
+
+    /**
      * 获取spannableString
      * @return
      */
